@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Bowling Reasons</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+        <div class="grid-container">
+
+            <div class="item1"><h1>Bowling</h1></div>
+          
+            <div class="item2">
+              <ul>
+                <li>Bowling Balls</li>
+                <li>Centers Near</li>
+                <li>ProShops Near</li>
+                <li>Community</li>
+              </ul>
+          </div>
+          
+            <div class="item3">
+              <h1>Reasons to Bowl</h1>
+              <p>Bowling is a sport that can be both competive and fun.</p>
+              <p>It can help many ways by being active and social with other people.</p>
+              <p>If you are serious about bowling and love to do it the next step would be getting your own equipment.</p>
+            </div>  
+          
+            <div class="item4">
+                <hi>See if center are near you with </hi>
+                <h1>HTML Geolocation</h1>
+                <p>Click the button to get your coordinates.</p>
+                
+                <button onclick="getLocation()">Try It</button>
+                
+                <p id="demo"></p>
+                
+                <script>
+                const x = document.getElementById("demo");
+                
+                function getLocation() {
+                  if (navigator.geolocation) {
+                    navigator.geolocation.watchPosition(success, error);
+                  } else { 
+                    x.innerHTML = "Geolocation is not supported by this browser.";
+                  }
+                }
+                    
+                function success(position) {
+                    x.innerHTML="Latitude: " + position.coords.latitude + 
+                    "<br>Longitude: " + position.coords.longitude;
+                }
+                
+                function error(error) {
+                  switch(error.code) {
+                    case error.PERMISSION_DENIED:
+                      x.innerHTML = "User denied the request for Geolocation."
+                      break;
+                    case error.POSITION_UNAVAILABLE:
+                      x.innerHTML = "Location information is unavailable."
+                      break;
+                    case error.TIMEOUT:
+                      x.innerHTML = "The request to get user location timed out."
+                      break;
+                    case error.UNKNOWN_ERROR:
+                      x.innerHTML = "An unknown error occurred."
+                      break;
+                  }
+                }
+                </script>
+            </div>
+          
+            <div class="item5"><p>Copyright of Tanner Manecke 2025</p></div>
+            
+          </div>
+        
+    </body>
+</html>
